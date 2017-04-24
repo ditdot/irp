@@ -1,2 +1,2 @@
-# irp
-Information Retrieval Project to complete a college assignment.
+# IRP
+In progress
