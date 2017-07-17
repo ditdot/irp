@@ -1,0 +1,42 @@
+.card {
+    background-color: #efefef;
+    border: 1px solid #d8d6d6;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 250px;
+}
+
+.card-img {
+    padding: 20px 40px;
+    height: 170px;
+}
+
+.card-title {
+    background-color: #970eaf;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h5, h6 {
+    margin-bottom: 0px;
+}
+
+hr {
+   background-color: #d8d6d6; 
+}
+
+.button-small {
+  line-height: 2.8rem;
+  padding: 0 1.5rem;
+  font-size: .8rem;
+  height: 2.8rem;
+}

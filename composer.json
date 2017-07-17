@@ -1,0 +1,6 @@
+{
+    "require": {
+        "mikecao/flight": "^1.3",
+        "ptcong/easyrequest": "^1.0"
+    }
+}
