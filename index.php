@@ -308,7 +308,7 @@ Flight::route('/ajax/retrieval', function() {
  
     $keyword = Flight::request()->query->keyword;
     $limit = 10;
-    $page = Flight::request()->query->page ?? 1;
+    $page = Flight::request()->query->page ?: 1;
     $offset = ($page - 1) * $limit;
 
     $data = [
@@ -351,7 +351,7 @@ Flight::route('/ajax/corpus', function() {
     $db = Flight::db();
 
     $limit = 10;
-    $page = Flight::request()->query->page ?? 1;
+    $page = Flight::request()->query->page ?: 1;
     $offset = ($page - 1) * $limit;
 
     $res = $db->query("SELECT id, title, url FROM docs ORDER BY id DESC LIMIT $limit OFFSET $offset");
@@ -370,7 +370,7 @@ Flight::route('/ajax/index', function() {
     $db = Flight::db();
 
     $limit = 10;
-    $page = Flight::request()->query->page ?? 1;
+    $page = Flight::request()->query->page ?: 1;
     $offset = ($page - 1) * $limit;
 
     $res = $db->query("SELECT * FROM indexes ORDER BY id LIMIT $limit OFFSET $offset");
@@ -387,7 +387,7 @@ Flight::route('/ajax/vector', function() {
     $db = Flight::db();
 
     $limit = 10;
-    $page = Flight::request()->query->page ?? 1;
+    $page = Flight::request()->query->page ?: 1;
     $offset = ($page - 1) * $limit;
 
     $res = $db->query("SELECT * FROM vector ORDER BY doc_id LIMIT $limit OFFSET $offset");
@@ -404,7 +404,7 @@ Flight::route('/ajax/cache', function() {
     $db = Flight::db();
 
     $limit = 10;
-    $page = Flight::request()->query->page ?? 1;
+    $page = Flight::request()->query->page ?: 1;
     $offset = ($page - 1) * $limit;
 
     $res = $db->query("SELECT * FROM cache ORDER BY id LIMIT $limit OFFSET $offset");
