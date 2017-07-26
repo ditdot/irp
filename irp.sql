@@ -1,5 +1,3 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-
 CREATE TABLE `cache` (
   `id` int(11) NOT NULL,
   `doc_id` int(11) NOT NULL,
@@ -51,12 +49,3 @@ ALTER TABLE `docs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `indexes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `cache`
-  ADD CONSTRAINT `cache_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `docs` (`id`);
-
-ALTER TABLE `indexes`
-  ADD CONSTRAINT `indexes_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `docs` (`id`);
-
-ALTER TABLE `vector`
-  ADD CONSTRAINT `vector_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `docs` (`id`);

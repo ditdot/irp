@@ -136,7 +136,8 @@ Flight::route('/index/create', function() {
         'date_query' => [
             [
                 'after' => $row['date']
-            ]
+            ],
+            'column' => 'post_modified'
         ],
         'order' => 'ASC'
     ]);
@@ -147,7 +148,7 @@ Flight::route('/index/create', function() {
 
             $res = $db->query("SELECT date FROM docs WHERE post_id = $doc->id");
             $row = $res->fetch_assoc();
-            if ($row['date'] != $doc->modified) {
+            if (empty($row['date']) || $row['date'] == $doc->modified) {
                 $db->query("INSERT INTO docs (post_id, title, url, date, content) VALUES ('$doc->id', '$doc->title', '$doc->url', '$doc->modified', '$content')");
                 $tdata['new']++;
             } else {
